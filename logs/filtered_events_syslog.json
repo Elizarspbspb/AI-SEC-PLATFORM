@@ -1,0 +1,1550 @@
+[
+    {
+        "timestamp": "2026-07-15T12:06:39.221133",
+        "line": 4,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.378521+00:00 user-VMware-Virtual-Platform kernel: Command line: BOOT_IMAGE=/boot/vmlinuz-6.11.0-17-generic root=UUID=79cb2b8f-d8d8-49cf-90d8-270fa5372892 ro quiet splash"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221493",
+        "line": 609,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379284+00:00 user-VMware-Virtual-Platform kernel: Kernel command line: BOOT_IMAGE=/boot/vmlinuz-6.11.0-17-generic root=UUID=79cb2b8f-d8d8-49cf-90d8-270fa5372892 ro quiet splash"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221525",
+        "line": 645,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379326+00:00 user-VMware-Virtual-Platform systemd[1]: systemd-repart.service - Repartition Root Disk was skipped because no trigger condition checks were met."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221620",
+        "line": 761,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379431+00:00 user-VMware-Virtual-Platform kernel: ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-7f])"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221625",
+        "line": 766,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379433+00:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221627",
+        "line": 767,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379434+00:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [mem 0x000d0000-0x000dbfff window]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221628",
+        "line": 768,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379434+00:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfebfffff window]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221630",
+        "line": 769,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379434+00:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221645",
+        "line": 785,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379528+00:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [io  0x0d00-0xfeff window]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221646",
+        "line": 786,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379529+00:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [bus 00-7f]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221671",
+        "line": 822,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379544+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.0: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221705",
+        "line": 828,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379546+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.1: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221712",
+        "line": 835,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379549+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.2: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221716",
+        "line": 841,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379551+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.3: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221720",
+        "line": 847,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379553+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.4: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221723",
+        "line": 852,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379555+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.5: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221726",
+        "line": 857,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379557+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.6: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221730",
+        "line": 863,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379558+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.7: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221733",
+        "line": 868,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379560+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.0: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221742",
+        "line": 875,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379563+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.1: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221746",
+        "line": 881,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379565+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.2: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221753",
+        "line": 891,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379581+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.3: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221756",
+        "line": 896,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379583+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.4: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221774",
+        "line": 919,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379662+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.5: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221778",
+        "line": 925,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379663+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.6: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221782",
+        "line": 930,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379665+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.7: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221788",
+        "line": 936,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379667+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.0: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221792",
+        "line": 942,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379669+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.1: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221817",
+        "line": 951,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379680+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.2: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221822",
+        "line": 958,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379683+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.3: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221841",
+        "line": 964,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379690+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.4: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221857",
+        "line": 971,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379696+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.5: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221861",
+        "line": 977,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379703+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.6: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221882",
+        "line": 984,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379710+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.7: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221886",
+        "line": 989,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379712+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.0: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221895",
+        "line": 996,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379719+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.1: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221902",
+        "line": 1004,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379726+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.2: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221907",
+        "line": 1011,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379732+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.3: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221911",
+        "line": 1017,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379739+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.4: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221916",
+        "line": 1024,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379745+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.5: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221919",
+        "line": 1029,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379747+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.6: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221923",
+        "line": 1036,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379754+00:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.7: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221930",
+        "line": 1047,
+        "pattern": "sudo",
+        "event": "2026-05-27T12:22:50.379768+00:00 user-VMware-Virtual-Platform systemd[1]: sssd-sudo.socket: Bound to unit sssd.service, but unit isn't active."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221932",
+        "line": 1048,
+        "pattern": "sudo",
+        "event": "2026-05-27T12:22:50.379771+00:00 user-VMware-Virtual-Platform systemd[1]: Dependency failed for sssd-sudo.socket - SSSD Sudo Service responder socket."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221933",
+        "line": 1049,
+        "pattern": "sudo",
+        "event": "2026-05-27T12:22:50.379774+00:00 user-VMware-Virtual-Platform systemd[1]: sssd-sudo.socket: Job sssd-sudo.socket/start failed with result 'dependency'."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221948",
+        "line": 1061,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379829+00:00 user-VMware-Virtual-Platform avahi-daemon[1275]: Successfully dropped root privileges."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.221965",
+        "line": 1090,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.379890+00:00 user-VMware-Virtual-Platform avahi-daemon[1275]: Successfully called chroot()."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.222202",
+        "line": 1556,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.380669+00:00 user-VMware-Virtual-Platform kernel: Trying to unpack rootfs image as initramfs..."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.222472",
+        "line": 1948,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.381248+00:00 user-VMware-Virtual-Platform kernel: systemd[1]: systemd-fsck-root.service - File System Check on Root Device was skipped because of an unmet condition check (ConditionPathExists=!/run/initramfs/fsck-root)."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.222477",
+        "line": 1951,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.381248+00:00 user-VMware-Virtual-Platform kernel: systemd[1]: Starting systemd-remount-fs.service - Remount Root and Kernel File Systems..."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.222495",
+        "line": 1974,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.381254+00:00 user-VMware-Virtual-Platform kernel: systemd[1]: systemd-repart.service - Repartition Root Disk was skipped because no trigger condition checks were met."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.222517",
+        "line": 1979,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:50.381256+00:00 user-VMware-Virtual-Platform kernel: systemd[1]: Finished systemd-remount-fs.service - Remount Root and Kernel File Systems."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.222736",
+        "line": 2228,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:52.623487+00:00 user-VMware-Virtual-Platform systemd[1]: tmp-snap.rootfs_mdmHvq.mount: Deactivated successfully."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.222826",
+        "line": 2315,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:54.437748+00:00 user-VMware-Virtual-Platform cloud-init[1659]: SHA256:F3Xpt6kWsurAmA2hfhdouAIRCM9GcisJn558SDt+wLQ root@user-VMware-Virtual-Platform"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.222837",
+        "line": 2332,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:54.438739+00:00 user-VMware-Virtual-Platform cloud-init[1659]: SHA256:K1VclIUoLZ3GiW2B4v+9zkwZfmLCCHfLrjhDhmvh30Y root@user-VMware-Virtual-Platform"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.222846",
+        "line": 2349,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:54.439763+00:00 user-VMware-Virtual-Platform cloud-init[1659]: SHA256:n7LbkDaFi355x1RjtONH+QrcMEyJSSI3tBcLRtsohvk root@user-VMware-Virtual-Platform"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.223028",
+        "line": 2482,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:56.770949+00:00 user-VMware-Virtual-Platform rtkit-daemon[2009]: Successfully called chroot."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.223032",
+        "line": 2483,
+        "pattern": "privilege",
+        "event": "2026-05-27T12:22:56.771111+00:00 user-VMware-Virtual-Platform rtkit-daemon[2009]: Successfully dropped privileges."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.223341",
+        "line": 2524,
+        "pattern": "root",
+        "event": "2026-05-27T12:22:57.211545+00:00 user-VMware-Virtual-Platform systemd[1]: tmp-snap.rootfs_PohA24.mount: Deactivated successfully."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.223544",
+        "line": 2654,
+        "pattern": "root",
+        "event": "2026-05-27T12:23:00.145295+00:00 user-VMware-Virtual-Platform systemd[1]: tmp-snap.rootfs_3Bt8rW.mount: Deactivated successfully."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.223563",
+        "line": 2668,
+        "pattern": "root",
+        "event": "2026-05-27T12:23:03.136723+00:00 user-VMware-Virtual-Platform systemd[1]: tmp-snap.rootfs_fRV7aS.mount: Deactivated successfully."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.224082",
+        "line": 3106,
+        "pattern": "root",
+        "event": "2026-05-27T12:23:49.940711+00:00 user-VMware-Virtual-Platform cloud-init: 256 SHA256:K1VclIUoLZ3GiW2B4v+9zkwZfmLCCHfLrjhDhmvh30Y root@user-VMware-Virtual-Platform (ECDSA)"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.224086",
+        "line": 3107,
+        "pattern": "root",
+        "event": "2026-05-27T12:23:49.944912+00:00 user-VMware-Virtual-Platform cloud-init: 256 SHA256:n7LbkDaFi355x1RjtONH+QrcMEyJSSI3tBcLRtsohvk root@user-VMware-Virtual-Platform (ED25519)"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.224088",
+        "line": 3108,
+        "pattern": "root",
+        "event": "2026-05-27T12:23:49.949141+00:00 user-VMware-Virtual-Platform cloud-init: 3072 SHA256:F3Xpt6kWsurAmA2hfhdouAIRCM9GcisJn558SDt+wLQ root@user-VMware-Virtual-Platform (RSA)"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.224177",
+        "line": 3211,
+        "pattern": "root",
+        "event": "2026-05-27T12:25:01.273258+00:00 user-VMware-Virtual-Platform CRON[4373]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.224179",
+        "line": 3212,
+        "pattern": "root",
+        "event": "2026-05-27T12:25:05.011488+00:00 user-VMware-Virtual-Platform update-notifier.desktop[4286]: WARNING:root:timeout reached, exiting"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.224415",
+        "line": 3379,
+        "pattern": "root",
+        "event": "2026-05-27T12:30:01.288863+00:00 user-VMware-Virtual-Platform CRON[4824]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.224486",
+        "line": 3468,
+        "pattern": "root",
+        "event": "2026-05-27T12:35:01.298314+00:00 user-VMware-Virtual-Platform CRON[4965]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.224577",
+        "line": 3494,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:01.318773+00:00 user-VMware-Virtual-Platform CRON[5090]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.224781",
+        "line": 3679,
+        "pattern": "sudo",
+        "event": "2026-05-27T12:45:59.705451+03:00 user-VMware-Virtual-Platform systemd[1]: sssd-sudo.socket: Bound to unit sssd.service, but unit isn't active."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.224783",
+        "line": 3680,
+        "pattern": "sudo",
+        "event": "2026-05-27T12:45:59.705455+03:00 user-VMware-Virtual-Platform systemd[1]: Dependency failed for sssd-sudo.socket - SSSD Sudo Service responder socket."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.224785",
+        "line": 3681,
+        "pattern": "sudo",
+        "event": "2026-05-27T12:45:59.705458+03:00 user-VMware-Virtual-Platform systemd[1]: sssd-sudo.socket: Job sssd-sudo.socket/start failed with result 'dependency'."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.224798",
+        "line": 3695,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.705547+03:00 user-VMware-Virtual-Platform avahi-daemon[1184]: Successfully dropped root privileges."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.224803",
+        "line": 3701,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.705569+03:00 user-VMware-Virtual-Platform avahi-daemon[1184]: Successfully called chroot()."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.224835",
+        "line": 3737,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.708243+03:00 user-VMware-Virtual-Platform kernel: Command line: BOOT_IMAGE=/boot/vmlinuz-6.11.0-17-generic root=UUID=79cb2b8f-d8d8-49cf-90d8-270fa5372892 ro quiet splash"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225114",
+        "line": 4267,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.710693+03:00 user-VMware-Virtual-Platform kernel: Kernel command line: BOOT_IMAGE=/boot/vmlinuz-6.11.0-17-generic root=UUID=79cb2b8f-d8d8-49cf-90d8-270fa5372892 ro quiet splash"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225225",
+        "line": 4398,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.710878+03:00 user-VMware-Virtual-Platform kernel: ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-7f])"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225231",
+        "line": 4403,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.710881+03:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225232",
+        "line": 4404,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.710882+03:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [mem 0x000d0000-0x000dbfff window]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225233",
+        "line": 4405,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.710882+03:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfebfffff window]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225235",
+        "line": 4406,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.710883+03:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225236",
+        "line": 4407,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.710942+03:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [io  0x0d00-0xfeff window]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225238",
+        "line": 4408,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.710943+03:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [bus 00-7f]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225258",
+        "line": 4441,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.710955+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.0: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225262",
+        "line": 4447,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.710957+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.1: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225265",
+        "line": 4453,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.710959+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.2: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225272",
+        "line": 4459,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711125+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.3: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225276",
+        "line": 4464,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711127+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.4: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225279",
+        "line": 4469,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711129+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.5: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225282",
+        "line": 4474,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711131+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.6: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225285",
+        "line": 4479,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711132+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.7: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225288",
+        "line": 4484,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711134+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.0: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225291",
+        "line": 4490,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711136+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.1: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225295",
+        "line": 4496,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711138+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.2: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225323",
+        "line": 4502,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711140+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.3: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225327",
+        "line": 4507,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711141+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.4: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225330",
+        "line": 4512,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711235+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.5: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225333",
+        "line": 4517,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711238+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.6: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225336",
+        "line": 4522,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711240+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.7: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225360",
+        "line": 4527,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711242+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.0: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225364",
+        "line": 4533,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711244+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.1: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225368",
+        "line": 4539,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711246+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.2: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225386",
+        "line": 4545,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711248+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.3: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225391",
+        "line": 4550,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711249+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.4: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225394",
+        "line": 4555,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711365+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.5: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225397",
+        "line": 4560,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711367+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.6: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225400",
+        "line": 4565,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711369+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.7: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225403",
+        "line": 4570,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711370+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.0: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225406",
+        "line": 4576,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711372+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.1: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225410",
+        "line": 4582,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711374+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.2: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225418",
+        "line": 4587,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711376+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.3: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225421",
+        "line": 4592,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711378+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.4: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225424",
+        "line": 4597,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711379+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.5: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225427",
+        "line": 4602,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711381+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.6: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225430",
+        "line": 4607,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.711383+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.7: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225657",
+        "line": 5070,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.712323+03:00 user-VMware-Virtual-Platform kernel: Trying to unpack rootfs image as initramfs..."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225919",
+        "line": 5466,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.712974+03:00 user-VMware-Virtual-Platform kernel: systemd[1]: systemd-fsck-root.service - File System Check on Root Device was skipped because of an unmet condition check (ConditionPathExists=!/run/initramfs/fsck-root)."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225924",
+        "line": 5469,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.712979+03:00 user-VMware-Virtual-Platform kernel: systemd[1]: Starting systemd-remount-fs.service - Remount Root and Kernel File Systems..."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225942",
+        "line": 5489,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.713000+03:00 user-VMware-Virtual-Platform kernel: systemd[1]: systemd-repart.service - Repartition Root Disk was skipped because no trigger condition checks were met."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.225950",
+        "line": 5499,
+        "pattern": "root",
+        "event": "2026-05-27T12:45:59.713006+03:00 user-VMware-Virtual-Platform kernel: systemd[1]: Finished systemd-remount-fs.service - Remount Root and Kernel File Systems."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.226270",
+        "line": 5793,
+        "pattern": "root",
+        "event": "2026-05-27T12:46:00.862551+03:00 user-VMware-Virtual-Platform rtkit-daemon[1531]: Successfully called chroot."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.226274",
+        "line": 5794,
+        "pattern": "privilege",
+        "event": "2026-05-27T12:46:00.862805+03:00 user-VMware-Virtual-Platform rtkit-daemon[1531]: Successfully dropped privileges."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.227019",
+        "line": 6412,
+        "pattern": "root",
+        "event": "2026-05-27T12:47:56.361947+03:00 user-VMware-Virtual-Platform update-notifier.desktop[3206]: WARNING:root:can not import unity GI Namespace Dbusmenu not available"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.227035",
+        "line": 6413,
+        "pattern": "root",
+        "event": "2026-05-27T12:48:01.457342+03:00 user-VMware-Virtual-Platform update-notifier.desktop[3206]: WARNING:root:Error loading .desktop file /usr/share/ubuntu/applications/texdoctk.desktop: constructor returned NULL"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.227036",
+        "line": 6414,
+        "pattern": "root",
+        "event": "2026-05-27T12:48:02.031742+03:00 user-VMware-Virtual-Platform update-notifier.desktop[3206]: WARNING:root:Error loading .desktop file /usr/share/applications/vim.desktop: constructor returned NULL"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.227167",
+        "line": 6458,
+        "pattern": "root",
+        "event": "2026-05-27T12:55:01.590645+03:00 user-VMware-Virtual-Platform CRON[3711]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.227448",
+        "line": 6633,
+        "pattern": "root",
+        "event": "2026-05-27T13:02:37.291493+03:00 user-VMware-Virtual-Platform systemd[1]: tmp-snap.rootfs_lK1rhL.mount: Deactivated successfully."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.227453",
+        "line": 6635,
+        "pattern": "permission denied",
+        "event": "2026-05-27T13:02:37.375618+03:00 user-VMware-Virtual-Platform firefox_firefox.desktop[4545]: update.go:85: cannot change mount namespace according to change mount (/var/lib/snapd/hostfs/usr/local/share/doc /usr/local/share/doc none bind,ro 0 0): cannot open directory \"/usr/local/share\": permission denied"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.227568",
+        "line": 6686,
+        "pattern": "root",
+        "event": "2026-05-27T13:05:01.603928+03:00 user-VMware-Virtual-Platform CRON[5925]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.227949",
+        "line": 7048,
+        "pattern": "root",
+        "event": "2026-05-27T13:12:00.381937+03:00 user-VMware-Virtual-Platform VGAuthService[8517]: Using '/var/lib/vmware/VGAuth/aliasStore' for alias store root directory"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228064",
+        "line": 7194,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.168934+03:00 user-VMware-Virtual-Platform kernel: Command line: BOOT_IMAGE=/boot/vmlinuz-6.11.0-17-generic root=UUID=79cb2b8f-d8d8-49cf-90d8-270fa5372892 ro quiet splash"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228146",
+        "line": 7244,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.169075+03:00 user-VMware-Virtual-Platform VGAuthService[999]: Using '/var/lib/vmware/VGAuth/aliasStore' for alias store root directory"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228388",
+        "line": 7558,
+        "pattern": "sudo",
+        "event": "2026-05-27T13:15:45.169789+03:00 user-VMware-Virtual-Platform systemd[1]: sssd-sudo.socket: Bound to unit sssd.service, but unit isn't active."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228395",
+        "line": 7569,
+        "pattern": "sudo",
+        "event": "2026-05-27T13:15:45.169793+03:00 user-VMware-Virtual-Platform systemd[1]: Dependency failed for sssd-sudo.socket - SSSD Sudo Service responder socket."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228398",
+        "line": 7576,
+        "pattern": "sudo",
+        "event": "2026-05-27T13:15:45.169802+03:00 user-VMware-Virtual-Platform systemd[1]: sssd-sudo.socket: Job sssd-sudo.socket/start failed with result 'dependency'."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228438",
+        "line": 7659,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.169947+03:00 user-VMware-Virtual-Platform avahi-daemon[1376]: Successfully dropped root privileges."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228458",
+        "line": 7696,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.169986+03:00 user-VMware-Virtual-Platform avahi-daemon[1376]: Successfully called chroot()."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228632",
+        "line": 7935,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170272+03:00 user-VMware-Virtual-Platform kernel: Kernel command line: BOOT_IMAGE=/boot/vmlinuz-6.11.0-17-generic root=UUID=79cb2b8f-d8d8-49cf-90d8-270fa5372892 ro quiet splash"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228733",
+        "line": 8066,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170426+03:00 user-VMware-Virtual-Platform kernel: ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-7f])"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228737",
+        "line": 8071,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170432+03:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228739",
+        "line": 8072,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170432+03:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [mem 0x000d0000-0x000dbfff window]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228758",
+        "line": 8073,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170433+03:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfebfffff window]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228761",
+        "line": 8074,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170433+03:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228762",
+        "line": 8075,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170511+03:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [io  0x0d00-0xfeff window]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228764",
+        "line": 8076,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170560+03:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [bus 00-7f]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228789",
+        "line": 8109,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170573+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.0: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228793",
+        "line": 8115,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170575+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.1: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228796",
+        "line": 8121,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170577+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.2: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228800",
+        "line": 8127,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170579+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.3: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228803",
+        "line": 8132,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170581+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.4: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228806",
+        "line": 8137,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170583+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.5: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228812",
+        "line": 8142,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170584+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.6: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228815",
+        "line": 8147,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170586+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.7: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228818",
+        "line": 8152,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170588+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.0: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228821",
+        "line": 8158,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170590+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.1: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228841",
+        "line": 8164,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170607+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.2: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228846",
+        "line": 8170,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170609+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.3: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228865",
+        "line": 8175,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170611+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.4: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228869",
+        "line": 8180,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170664+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.5: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228871",
+        "line": 8185,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170666+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.6: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228874",
+        "line": 8190,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170667+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.7: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228877",
+        "line": 8195,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170669+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.0: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228895",
+        "line": 8201,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170675+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.1: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228905",
+        "line": 8207,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170676+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.2: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228925",
+        "line": 8213,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170678+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.3: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228929",
+        "line": 8218,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170680+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.4: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228932",
+        "line": 8223,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170681+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.5: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228935",
+        "line": 8228,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170683+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.6: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228938",
+        "line": 8233,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170685+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.7: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228941",
+        "line": 8238,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170686+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.0: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228944",
+        "line": 8244,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170688+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.1: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228947",
+        "line": 8250,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170690+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.2: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228950",
+        "line": 8255,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170691+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.3: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228953",
+        "line": 8260,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170693+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.4: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228956",
+        "line": 8265,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170695+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.5: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228967",
+        "line": 8270,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170696+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.6: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.228973",
+        "line": 8275,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.170698+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.7: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.229291",
+        "line": 8741,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.171404+03:00 user-VMware-Virtual-Platform kernel: Trying to unpack rootfs image as initramfs..."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.229565",
+        "line": 9139,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.171903+03:00 user-VMware-Virtual-Platform kernel: systemd[1]: systemd-fsck-root.service - File System Check on Root Device was skipped because of an unmet condition check (ConditionPathExists=!/run/initramfs/fsck-root)."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.229570",
+        "line": 9142,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.171905+03:00 user-VMware-Virtual-Platform kernel: systemd[1]: Starting systemd-remount-fs.service - Remount Root and Kernel File Systems..."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.229592",
+        "line": 9165,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.171918+03:00 user-VMware-Virtual-Platform kernel: systemd[1]: systemd-repart.service - Repartition Root Disk was skipped because no trigger condition checks were met."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.229600",
+        "line": 9175,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.171925+03:00 user-VMware-Virtual-Platform kernel: systemd[1]: Finished systemd-remount-fs.service - Remount Root and Kernel File Systems."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.229817",
+        "line": 9412,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:45.989454+03:00 user-VMware-Virtual-Platform rtkit-daemon[1716]: Successfully called chroot."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.229885",
+        "line": 9413,
+        "pattern": "privilege",
+        "event": "2026-05-27T13:15:45.989663+03:00 user-VMware-Virtual-Platform rtkit-daemon[1716]: Successfully dropped privileges."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.229935",
+        "line": 9458,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:46.079867+03:00 user-VMware-Virtual-Platform systemd[1]: tmp-snap.rootfs_goJu4n.mount: Deactivated successfully."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.230672",
+        "line": 10068,
+        "pattern": "root",
+        "event": "2026-05-27T13:16:02.308825+03:00 user-VMware-Virtual-Platform systemd[1]: tmp-snap.rootfs_daAvZN.mount: Deactivated successfully."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.230677",
+        "line": 10069,
+        "pattern": "permission denied",
+        "event": "2026-05-27T13:16:02.395667+03:00 user-VMware-Virtual-Platform firefox_firefox.desktop[3465]: update.go:85: cannot change mount namespace according to change mount (/var/lib/snapd/hostfs/usr/local/share/doc /usr/local/share/doc none bind,ro 0 0): cannot open directory \"/usr/local/share\": permission denied"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.231036",
+        "line": 10281,
+        "pattern": "root",
+        "event": "2026-05-27T13:15:01.570051+03:00 user-VMware-Virtual-Platform CRON[5077]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.231380",
+        "line": 10580,
+        "pattern": "root",
+        "event": "2026-05-27T13:17:01.577879+03:00 user-VMware-Virtual-Platform CRON[6754]: (root) CMD (cd / && run-parts --report /etc/cron.hourly)"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.232272",
+        "line": 11272,
+        "pattern": "root",
+        "event": "2026-05-27T13:25:01.588818+03:00 user-VMware-Virtual-Platform CRON[10262]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.233101",
+        "line": 11809,
+        "pattern": "root",
+        "event": "2026-05-27T13:30:01.597223+03:00 user-VMware-Virtual-Platform CRON[12589]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.233749",
+        "line": 12166,
+        "pattern": "root",
+        "event": "2026-05-27T13:35:01.605297+03:00 user-VMware-Virtual-Platform CRON[14288]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.233937",
+        "line": 12369,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.487222+03:00 user-VMware-Virtual-Platform kernel: Command line: BOOT_IMAGE=/boot/vmlinuz-6.11.0-17-generic root=UUID=79cb2b8f-d8d8-49cf-90d8-270fa5372892 ro quiet splash"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234027",
+        "line": 12507,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.487703+03:00 user-VMware-Virtual-Platform VGAuthService[1014]: Using '/var/lib/vmware/VGAuth/aliasStore' for alias store root directory"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234283",
+        "line": 12886,
+        "pattern": "sudo",
+        "event": "2026-05-27T13:43:15.489081+03:00 user-VMware-Virtual-Platform systemd[1]: sssd-sudo.socket: Bound to unit sssd.service, but unit isn't active."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234287",
+        "line": 12891,
+        "pattern": "sudo",
+        "event": "2026-05-27T13:43:15.489085+03:00 user-VMware-Virtual-Platform systemd[1]: Dependency failed for sssd-sudo.socket - SSSD Sudo Service responder socket."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234292",
+        "line": 12894,
+        "pattern": "sudo",
+        "event": "2026-05-27T13:43:15.489091+03:00 user-VMware-Virtual-Platform systemd[1]: sssd-sudo.socket: Job sssd-sudo.socket/start failed with result 'dependency'."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234326",
+        "line": 12959,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.489176+03:00 user-VMware-Virtual-Platform avahi-daemon[1378]: Successfully dropped root privileges."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234335",
+        "line": 12977,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.489198+03:00 user-VMware-Virtual-Platform avahi-daemon[1378]: Successfully called chroot()."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234460",
+        "line": 13119,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490106+03:00 user-VMware-Virtual-Platform kernel: Kernel command line: BOOT_IMAGE=/boot/vmlinuz-6.11.0-17-generic root=UUID=79cb2b8f-d8d8-49cf-90d8-270fa5372892 ro quiet splash"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234558",
+        "line": 13252,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490461+03:00 user-VMware-Virtual-Platform kernel: ACPI: PCI Root Bridge [PCI0] (domain 0000 [bus 00-7f])"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234564",
+        "line": 13257,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490474+03:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [mem 0x000a0000-0x000bffff window]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234565",
+        "line": 13258,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490475+03:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [mem 0x000d0000-0x000dbfff window]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234584",
+        "line": 13259,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490476+03:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [mem 0xc0000000-0xfebfffff window]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234587",
+        "line": 13260,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490477+03:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [io  0x0000-0x0cf7 window]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234633",
+        "line": 13264,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490553+03:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [io  0x0d00-0xfeff window]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234636",
+        "line": 13265,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490556+03:00 user-VMware-Virtual-Platform kernel: pci_bus 0000:00: root bus resource [bus 00-7f]"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234662",
+        "line": 13298,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490576+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.0: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234666",
+        "line": 13304,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490580+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.1: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234670",
+        "line": 13310,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490584+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.2: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234673",
+        "line": 13316,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490586+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.3: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234677",
+        "line": 13321,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490588+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.4: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234680",
+        "line": 13326,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490590+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.5: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234683",
+        "line": 13331,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490592+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.6: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234686",
+        "line": 13336,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490594+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:15.7: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234692",
+        "line": 13341,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490596+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.0: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234696",
+        "line": 13347,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490598+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.1: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234699",
+        "line": 13353,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490600+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.2: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234702",
+        "line": 13359,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490602+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.3: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234705",
+        "line": 13364,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490604+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.4: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234708",
+        "line": 13369,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490696+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.5: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234727",
+        "line": 13374,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490700+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.6: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234731",
+        "line": 13379,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490704+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:16.7: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234734",
+        "line": 13384,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490751+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.0: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234737",
+        "line": 13390,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490771+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.1: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234741",
+        "line": 13396,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490794+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.2: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234749",
+        "line": 13402,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490813+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.3: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234752",
+        "line": 13407,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490816+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.4: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234771",
+        "line": 13412,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490819+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.5: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234775",
+        "line": 13417,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490823+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.6: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234778",
+        "line": 13422,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490826+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:17.7: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234781",
+        "line": 13427,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490828+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.0: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234784",
+        "line": 13433,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490850+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.1: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234788",
+        "line": 13439,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490857+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.2: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234791",
+        "line": 13444,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490860+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.3: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234794",
+        "line": 13449,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490863+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.4: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234797",
+        "line": 13454,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490866+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.5: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234800",
+        "line": 13459,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490869+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.6: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.234807",
+        "line": 13464,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.490871+03:00 user-VMware-Virtual-Platform kernel: pci 0000:00:18.7: [15ad:07a0] type 01 class 0x060400 PCIe Root Port"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.235049",
+        "line": 13927,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.492172+03:00 user-VMware-Virtual-Platform kernel: Trying to unpack rootfs image as initramfs..."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.235297",
+        "line": 14324,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.493524+03:00 user-VMware-Virtual-Platform kernel: systemd[1]: systemd-fsck-root.service - File System Check on Root Device was skipped because of an unmet condition check (ConditionPathExists=!/run/initramfs/fsck-root)."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.235300",
+        "line": 14327,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.493525+03:00 user-VMware-Virtual-Platform kernel: systemd[1]: Starting systemd-remount-fs.service - Remount Root and Kernel File Systems..."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.235320",
+        "line": 14350,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.493557+03:00 user-VMware-Virtual-Platform kernel: systemd[1]: systemd-repart.service - Repartition Root Disk was skipped because no trigger condition checks were met."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.235328",
+        "line": 14358,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.493565+03:00 user-VMware-Virtual-Platform kernel: systemd[1]: Finished systemd-remount-fs.service - Remount Root and Kernel File Systems."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.235485",
+        "line": 14542,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:15.943121+03:00 user-VMware-Virtual-Platform rtkit-daemon[1607]: Successfully called chroot."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.235487",
+        "line": 14543,
+        "pattern": "privilege",
+        "event": "2026-05-27T13:43:15.943282+03:00 user-VMware-Virtual-Platform rtkit-daemon[1607]: Successfully dropped privileges."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.235564",
+        "line": 14594,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:16.301738+03:00 user-VMware-Virtual-Platform systemd[1]: tmp-snap.rootfs_ES66P6.mount: Deactivated successfully."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.236250",
+        "line": 15162,
+        "pattern": "root",
+        "event": "2026-05-27T13:43:35.265414+03:00 user-VMware-Virtual-Platform systemd[1]: tmp-snap.rootfs_QnLwFl.mount: Deactivated successfully."
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.236254",
+        "line": 15163,
+        "pattern": "permission denied",
+        "event": "2026-05-27T13:43:35.365728+03:00 user-VMware-Virtual-Platform firefox_firefox.desktop[3250]: update.go:85: cannot change mount namespace according to change mount (/var/lib/snapd/hostfs/usr/local/share/doc /usr/local/share/doc none bind,ro 0 0): cannot open directory \"/usr/local/share\": permission denied"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.236700",
+        "line": 15488,
+        "pattern": "root",
+        "event": "2026-05-27T13:45:01.379181+03:00 user-VMware-Virtual-Platform CRON[5661]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.237181",
+        "line": 15949,
+        "pattern": "root",
+        "event": "2026-05-27T13:55:01.394162+03:00 user-VMware-Virtual-Platform CRON[8127]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.237249",
+        "line": 16031,
+        "pattern": "root",
+        "event": "2026-05-27T14:05:01.405501+03:00 user-VMware-Virtual-Platform CRON[8610]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.237687",
+        "line": 16488,
+        "pattern": "root",
+        "event": "2026-05-27T14:15:01.939025+03:00 user-VMware-Virtual-Platform CRON[11570]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.237906",
+        "line": 16624,
+        "pattern": "root",
+        "event": "2026-05-27T14:17:01.948606+03:00 user-VMware-Virtual-Platform CRON[12444]: (root) CMD (cd / && run-parts --report /etc/cron.hourly)"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.238854",
+        "line": 17145,
+        "pattern": "root",
+        "event": "2026-05-27T14:25:01.961992+03:00 user-VMware-Virtual-Platform CRON[13952]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.238888",
+        "line": 17164,
+        "pattern": "root",
+        "event": "2026-05-27T14:30:01.970888+03:00 user-VMware-Virtual-Platform CRON[13986]: (root) CMD ([ -x /etc/init.d/anacron ] && if [ ! -d /run/systemd/system ]; then /usr/sbin/invoke-rc.d anacron start >/dev/null; fi)"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.238917",
+        "line": 17179,
+        "pattern": "root",
+        "event": "2026-05-27T14:35:01.980521+03:00 user-VMware-Virtual-Platform CRON[14007]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)"
+    },
+    {
+        "timestamp": "2026-07-15T12:06:39.239032",
+        "line": 17303,
+        "pattern": "root",
+        "event": "2026-05-27T14:45:01.989561+03:00 user-VMware-Virtual-Platform CRON[16072]: (root) CMD (command -v debian-sa1 > /dev/null && debian-sa1 1 1)"
+    }
+]
