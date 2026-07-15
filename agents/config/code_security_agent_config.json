@@ -1,0 +1,7 @@
+{
+    "project_path": "../web",
+    "semgrep_rules": "../semgrep-rules/python",
+    "threads": 4,
+    "report_file": "reports/code_report.md",
+    "model": "ALIENTELLIGENCE/cybersecuritythreatanalysisv2"
+}
