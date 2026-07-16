@@ -1,3 +1,8 @@
+Запуск проекта из директории AI-SEC-PLATFORM
+```
+python -m agents.code_security_agent
+```
+
 # 1. Качаем и проверяем Ollama: 
 ```
 ollama run ALIENTELLIGENCE/cybersecuritythreatanalysisv2
@@ -42,6 +47,7 @@ agents/test_security_agent.py
 
 ## 3.2 Агент анализа отобранных логов
 agents/logs_security_agent.py
+Далее надо будет заставить агента самому обращаться к файлу log_analyzer.py
 
 ## 3.3 Агент анализа результатов работы правил Semgrep
 agents/code_security_agent.py

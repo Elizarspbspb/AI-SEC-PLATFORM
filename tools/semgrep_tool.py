@@ -1,6 +1,20 @@
 import subprocess
 import json
 
+def normalize_semgrep_result(data):
+    findings = []
+    for item in data.get("results", []):
+        extra = item.get("extra", {})
+        finding = {
+            "rule": item.get("check_id"),
+            "file": item.get("path"),
+            "line": item.get("start", {}).get("line"),
+            "severity": extra.get("severity"),
+            "message": extra.get("message"),
+        }
+        findings.append(finding)
+    return findings
+    
 def run_semgrep(
         project_path,
         rules_path,
@@ -25,6 +39,11 @@ def run_semgrep(
         raise Exception(
             result.stderr
         )
-    return json.loads(
-        result.stdout
-    )
+    #print("[!!!]", result.stdout)
+    #return json.loads(result.stdout)
+    
+    stdout = result.stdout
+    semgrep_json = json.loads(stdout)
+    clean_results = normalize_semgrep_result(semgrep_json)
+    print("[!!!]", clean_results)
+    return clean_results

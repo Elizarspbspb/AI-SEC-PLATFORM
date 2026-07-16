@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+AI Security Platform
+</title>
+</head>
+
+<body>
+<h1>
+AI Security Platform
+</h1>
+
+<form method="POST" action="/run">
+<h3>
+Выберите агента:
+</h3>
+
+<select name="agent">
+<option value="code">
+Code Security Agent
+</option>
+
+<option value="log">
+Log Security Agent
+</option>
+</select>
+
+<br><br>
+
+<h3>
+Путь анализа:
+</h3>
+
+<input 
+type="text"
+name="target_path"
+placeholder="/path/to/project"
+/>
+
+<br><br>
+
+<h3>
+Путь правил Semgrep:
+</h3>
+
+<input
+type="text"
+name="rules_path"
+placeholder="/path/to/rules"
+/>
+
+<br><br>
+
+<button type="submit">
+Запустить анализ
+</button>
+
+</form>
+</body>
+</html>

@@ -1,6 +1,6 @@
 {
     "project_path": "../web",
-    "semgrep_rules": "../semgrep-rules/python",
+    "semgrep_rules": "../semgrep-rules",
     "threads": 4,
     "report_file": "reports/code_report.md",
     "model": "ALIENTELLIGENCE/cybersecuritythreatanalysisv2"
