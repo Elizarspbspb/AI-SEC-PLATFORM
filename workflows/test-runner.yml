@@ -1,0 +1,12 @@
+name: Test Self Hosted Runner
+on:
+  push:
+jobs:
+  test:
+    runs-on: self-hosted
+    steps:
+      - name: Hello
+        run: |
+          echo "Hello from my computer"
+          hostname
+          python3 --version
