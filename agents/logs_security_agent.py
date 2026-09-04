@@ -2,8 +2,11 @@ import json
 import ollama
 
 MODEL = "ALIENTELLIGENCE/cybersecuritythreatanalysisv2"
-INPUT_FILE = "../logs/filtered_events_syslog.json"
-REPORT_FILE = "../reports/log_report.md"
+#INPUT_FILE = "../logs/filtered_events_syslog.json"
+INPUT_FILE = "../AI-SEC-PLATFORM/logs/filtered_events_syslog.json"
+#REPORT_FILE = "../reports/log_report.md"
+#REPORT_FILE = "./agents/reports/log_report.md"
+REPORT_FILE = "../AI-SEC-PLATFORM/reports/log_report.md"
 
 SYSTEM_PROMPT = """
 Ты являешься Security Operations Center (SOC) Analyst Agent.

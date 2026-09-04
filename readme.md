@@ -1,7 +1,10 @@
 Запуск проекта из директории AI-SEC-PLATFORM
 ```
 python -m agents.code_security_agent
+python -m agents.logs_security_agent
 ```
+CI/CD
+https://github.com/Elizarspbspb/AI-SEC-PLATFORM/settings/actions/runners
 
 # 1. Качаем и проверяем Ollama: 
 ```
@@ -48,6 +51,7 @@ agents/test_security_agent.py
 ## 3.2 Агент анализа отобранных логов
 agents/logs_security_agent.py
 Далее надо будет заставить агента самому обращаться к файлу log_analyzer.py
+https://github.com/hightemp/docLinux/blob/master/articles/%D0%9B%D0%BE%D0%B3%20%D1%84%D0%B0%D0%B9%D0%BB%D1%8B%20Linux%20%D0%BF%D0%BE%20%D0%BF%D0%BE%D1%80%D1%8F%D0%B4%D0%BA%D1%83.md
 
 ## 3.3 Агент анализа результатов работы правил Semgrep
 agents/code_security_agent.py
