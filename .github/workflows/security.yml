@@ -21,6 +21,14 @@ jobs:
         uses: trufflesecurity/trufflehog@main
         with:
           extra_args: --results=verified,unknown
+     - name: Check Gitleaks config
+        run: |
+          echo "Config file:"
+          cat .gitleaks.toml
+          echo "Working directory:"
+          pwd
+          echo "File:"
+          ls -l raw_logs/syslog.txt
 
       - name: Gitleaks
         uses: gitleaks/gitleaks-action@v3
