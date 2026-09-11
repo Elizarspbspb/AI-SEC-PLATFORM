@@ -6,5 +6,5 @@ useDefault = true
 [[allowlists]]
 description = "Test files"
 paths = [
-    '''^raw_logs/syslog\.txt$'''
+    '''raw_logs/syslog\.txt'''
 ]
