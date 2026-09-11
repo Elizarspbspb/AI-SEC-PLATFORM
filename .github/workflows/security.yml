@@ -21,7 +21,7 @@ jobs:
         uses: trufflesecurity/trufflehog@main
         with:
           extra_args: --results=verified,unknown
-     - name: Check Gitleaks config
+      - name: Check Gitleaks config
         run: |
           echo "Config file:"
           cat .gitleaks.toml
