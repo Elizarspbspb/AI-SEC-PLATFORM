@@ -1,0 +1,10 @@
+title = "AI-SEC-PLATFORM Gitleaks config"
+
+[extend]
+useDefault = true
+
+[[allowlists]]
+description = "Test files"
+paths = [
+    '''^raw_logs/syslog\.txt$'''
+]
