@@ -16,3 +16,13 @@ jobs:
           echo "Security pipeline started"
           echo "Repository: ${{ github.repository }}"
           echo "Commit: ${{ github.sha }}"
+
+      - name: TruffleHog
+        uses: trufflesecurity/trufflehog@main
+        with:
+          extra_args: --results=verified,unknown
+
+      - name: Gitleaks
+        uses: gitleaks/gitleaks-action@v3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
