@@ -42,3 +42,31 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITLEAKS_CONFIG: ${{ github.workspace }}/.gitleaks.toml
+
+      - name: Run OWASP Dependency-Check
+        # Модуль отключен - false, true - включен
+        if: false
+        uses: dependency-check/Dependency-Check_Action@main
+        id: DependencyCheck
+        with:
+          project: 'AI-SEC-PLATFORM'
+          path: '.'
+          # Выходной формат файла
+          format: 'SARIF,HTML'
+          # --enableRetired - поиск устаревших библиотек JS
+          # --failOnCVSS 3 - пайплайн упадет если CVSS >= 3.0
+          # --enableHighRiskIndex - высокорискованные методы анализа
+          # NVD_API_KEY - ключ качает инфу об уязвимостях
+          args: >
+            --failOnCVSS 3
+            --nvdApiKey ${{ secrets.NVD_API_KEY }}
+      
+      - name: Trivy SCA
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: "fs"
+          scan-ref: "."
+          scanners: "vuln"
+          format: "table"
+          exit-code: "0"
+          severity: "CRITICAL,HIGH"
