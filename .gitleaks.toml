@@ -3,8 +3,9 @@ title = "AI-SEC-PLATFORM Gitleaks config"
 [extend]
 useDefault = true
 
-[[allowlists]]
-description = "Test files"
+[allowlist]
+description = "Ignore raw_logs"
 paths = [
-    '''raw_logs/syslog\.txt'''
+   '''raw_logs/''', 
+   '''syslog\.txt'''
 ]
