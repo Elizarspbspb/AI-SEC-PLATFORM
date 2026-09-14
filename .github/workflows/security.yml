@@ -60,9 +60,9 @@ jobs:
           args: >
             --failOnCVSS 3
             --nvdApiKey ${{ secrets.NVD_API_KEY }}
-      
+
       - name: Trivy SCA
-        uses: aquasecurity/trivy-action@master
+        uses: aquasecurity/trivy-action@v0.28.0
         with:
           scan-type: "fs"
           scan-ref: "."
