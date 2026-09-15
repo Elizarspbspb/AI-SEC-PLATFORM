@@ -69,4 +69,4 @@ jobs:
           scanners: "vuln"
           format: "table"
           exit-code: "0"
-          severity: "CRITICAL,HIGH"
+          severity: "CRITICAL,HIGH,MEDIUM"
