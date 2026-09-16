@@ -67,6 +67,10 @@ jobs:
           scan-type: "fs"
           scan-ref: "."
           scanners: "vuln"
-          format: "table"
+          format: "json"
+          output: "trivy.json"
           exit-code: "0"
-          severity: "CRITICAL,HIGH,MEDIUM"
+          severity: "CRITICAL,HIGH,MEDIUM,LOW"
+
+      - name: Security gate
+        run: python security/security_gate.py
