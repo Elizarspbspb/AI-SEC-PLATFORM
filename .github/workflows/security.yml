@@ -72,5 +72,24 @@ jobs:
           exit-code: "0"
           severity: "CRITICAL,HIGH,MEDIUM,LOW"
 
+      - name: Upload Trivy result
+        uses: actions/upload-artifact@v4
+        with:
+          name: trivy-result
+          path: trivy.json
+
+  gate:
+    needs: security
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Download Trivy result
+        uses: actions/download-artifact@v5
+        with:
+          name: trivy-result
+
       - name: Security gate
         run: python security/security_gate.py
