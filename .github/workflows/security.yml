@@ -110,7 +110,7 @@ jobs:
           rm .semgrep-rules/Makefile
           rm .semgrep-rules/CO*
           rm .semgrep-rules/metadata*
-          rm .semgrep-rules/README.m
+          rm .semgrep-rules/README.md
           rm .semgrep-rules/template*
           rm .semgrep-rules/SECURITY.md
 
