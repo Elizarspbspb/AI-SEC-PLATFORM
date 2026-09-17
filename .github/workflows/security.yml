@@ -113,6 +113,8 @@ jobs:
           rm .semgrep-rules/README.md
           rm .semgrep-rules/template*
           rm .semgrep-rules/SECURITY.md
+          rm .semgrep-rules/.pre-commit-config.yaml
+          rm -rf .semgrep-rules/.git*
 
       - name: Run Semgrep
         run: |
