@@ -107,9 +107,13 @@ jobs:
 
       - name: Run Semgrep
         run: |
-          semgrep scan --config .semgrep-rules/python .
+          semgrep scan --config .semgrep-rules/python . --json --output semgrep.json
 
-
+      - name: Upload Semgrep result
+        uses: actions/upload-artifact@v4
+        with:
+          name: semgrep-result
+          path: semgrep.json
 
 
 
