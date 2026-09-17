@@ -78,6 +78,45 @@ jobs:
           name: trivy-result
           path: trivy.json
 
+  sast:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Setup Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Install Semgrep
+        run: pip install semgrep
+
+      - name: Cache Semgrep rules
+        id: semgrep-cache
+        uses: actions/cache@v4
+        with:
+          path: .semgrep-rules
+          key: semgrep-rules-v1
+
+      - name: Download Semgrep rules
+        if: steps.semgrep-cache.outputs.cache-hit != 'true'
+        run: |
+          git clone --depth 1 https://github.com/semgrep/semgrep-rules.git .semgrep-rules
+
+      - name: Run Semgrep
+        run: |
+          semgrep scan --config .semgrep-rules .
+
+
+
+
+
+
+
+
+
   gate:
     needs: security
     runs-on: ubuntu-latest
@@ -93,3 +132,4 @@ jobs:
 
       - name: Security gate
         run: python security/security_gate.py
+
