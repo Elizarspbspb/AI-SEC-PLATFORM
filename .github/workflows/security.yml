@@ -105,6 +105,14 @@ jobs:
         run: |
           git clone --depth 1 https://github.com/semgrep/semgrep-rules.git .semgrep-rules
           rm -rf .semgrep-rules/stats
+          rm LICENSE
+          rm Pip*
+          rm Makefile
+          rm CO*
+          rm metadata*
+          rm README.m
+          rm template*
+          rm SECURITY.md
 
       - name: Run Semgrep
         run: |
