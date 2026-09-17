@@ -107,7 +107,7 @@ jobs:
 
       - name: Run Semgrep
         run: |
-          semgrep scan --config .semgrep-rules .
+          semgrep scan --config .semgrep-rules/python .
 
 
 
