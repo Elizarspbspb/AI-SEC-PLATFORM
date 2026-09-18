@@ -151,7 +151,7 @@ jobs:
 
 
   gate:
-    needs: Secrets, SCA
+    needs: [Secrets, SCA]
     runs-on: ubuntu-latest
 
     steps:
