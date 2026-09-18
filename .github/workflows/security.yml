@@ -102,6 +102,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+        with:
+          ref: ${{ github.event.after }}
+          # Скачиваем всю историю коммитов, без самих файлов старых коммитов. Git видит всю цепочку изменений!
+          filter: tree:0
+          fetch-depth: 0
 
       - name: Setup Python
         uses: actions/setup-python@v6
@@ -134,9 +139,24 @@ jobs:
           rm .semgrep-rules/.pre-commit-config.yaml
           rm -rf .semgrep-rules/.git*
 
+        # Список измененных файлов (разделяем их ПРОБЕЛОМ для Semgrep)
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v45
+        with:
+          base_sha: ${{ github.event.before }}
+          sha: ${{ github.event.after }}
+          diff_relative: true
+          files_separator: " " # Semgrep принимает файлы через пробел
+
+        # Запуск Semgrep только если есть измененные файлы
       - name: Run Semgrep
-        run: |
-          semgrep scan --config .semgrep-rules . --json --output semgrep.json
+        if: steps.changed-files.outputs.any_changed == 'true'
+        run: semgrep scan --config .semgrep-rules --json --output semgrep.json ${{ steps.changed-files.outputs.all_changed_files }}
+
+      #- name: Run Semgrep
+      #  run: |
+      #    semgrep scan --config .semgrep-rules . --json --output semgrep.json
 
       - name: Upload Semgrep result
         uses: actions/upload-artifact@v4
