@@ -5,12 +5,20 @@ on:
     # Проверяем пуши во все ветки
     branches: [ "**" ]
   pull_request:
-    # Также проверять PR перед слиянием
+    # Проверять пулл реквест перед слиянием
     types: [opened, synchronize, reopened]
 
 jobs:
-  security:
+  Secrets:
+    name: Secret Detection — ${{ matrix.scanner }}  # <--- Динамическое имя!
     runs-on: ubuntu-latest
+    strategy:
+      # Запрет быстрого завершение оставшихся задач, если упадет предыдущая
+      fail-fast: false
+      # Размножение задач на независимые параллельные задачи
+      matrix:
+        # Запуск параллельных задач
+        scanner: [trufflehog, gitleaks]
 
     steps:
       - name: Checkout repository
@@ -18,13 +26,8 @@ jobs:
         with:
           fetch-depth: 0 # Скачиваем историю, чтобы Git мог сравнить коммиты
 
-      - name: Test GitHub Actions
-        run: |
-          echo "Security pipeline started"
-          echo "Repository: ${{ github.repository }}"
-          echo "Commit: ${{ github.sha }}"
-
       - name: TruffleHog
+        if: matrix.scanner == 'trufflehog'
         uses: trufflesecurity/trufflehog@main
         with:
           # event.before содержит хэш до пуша. Мы проверяем изменения от него до текущего HEAD.
@@ -32,18 +35,30 @@ jobs:
           head: HEAD
           extra_args: --results=verified,unknown
 
-      #- name: Check Gitleaks config
-      #  run: |
-      #    echo "Config file:"
-      #    ls -l raw_logs/syslog.txt
-
       - name: Gitleaks
+        if: matrix.scanner == 'gitleaks'
         uses: gitleaks/gitleaks-action@v3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITLEAKS_CONFIG: ${{ github.workspace }}/.gitleaks.toml
 
+  SCA:
+    name: Software Component Analysis — ${{ matrix.sca }}  # <--- Динамическое имя!
+    runs-on: ubuntu-latest
+    strategy:
+      # Запрет быстрого завершение оставшихся задач, если упадет предыдущая
+      fail-fast: false
+      # Размножение задач на независимые параллельные задачи
+      matrix:
+        # Запуск параллельных задач
+        sca: [owasp, trivy]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Run OWASP Dependency-Check
+        # if: matrix.sca == 'owasp'
         # Модуль отключен - false, true - включен
         if: false
         uses: dependency-check/Dependency-Check_Action@main
@@ -62,6 +77,7 @@ jobs:
             --nvdApiKey ${{ secrets.NVD_API_KEY }}
 
       - name: Trivy SCA
+        if: matrix.sca == 'trivy'
         uses: aquasecurity/trivy-action@v0.36.0
         with:
           scan-type: "fs"
@@ -73,6 +89,8 @@ jobs:
           severity: "CRITICAL,HIGH,MEDIUM,LOW"
 
       - name: Upload Trivy result
+        # Добавить условие, иначе шаг выполнился бы для обоих задач и для owasp и для trivy 
+        if: matrix.sca == 'trivy'
         uses: actions/upload-artifact@v4
         with:
           name: trivy-result
