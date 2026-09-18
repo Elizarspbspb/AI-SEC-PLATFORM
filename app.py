@@ -2,6 +2,7 @@ from flask import Flask, render_template, request
 
 import subprocess
 
+AWS_SECRET_ACCESS_KEY=AKIAIOSFODNN7EXAMPLE
 
 app = Flask(__name__)
 
@@ -26,7 +27,8 @@ def run_agent():
 
     rules_path = request.form["rules_path"]
 
-
+    user_input = input()
+    result = eval(user_input)
 
     if agent == "code":
 
