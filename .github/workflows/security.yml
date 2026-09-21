@@ -133,7 +133,7 @@ jobs:
           key: semgrep-rules-v1
 
       - name: Download Semgrep rules
-        if: steps.semgrep-cache.outputs.cache-hit != 'true'
+        if: matrix.sast == 'sast-auto' && steps.semgrep-cache.outputs.cache-hit != 'true'
         run: |
           git clone --depth 1 https://github.com/semgrep/semgrep-rules.git .semgrep-rules
           rm -rf .semgrep-rules/stats
@@ -175,6 +175,7 @@ jobs:
 
         # Запуск Semgrep со своими правилами
       - name: Check My Semgrep Rules Exist
+        if: matrix.sast == 'sast-my-rules'
         id: check-my-rules
         run: |
           if [ ! -d "security/SAST/semgrep" ]; then
