@@ -96,8 +96,16 @@ jobs:
           name: trivy-result
           path: trivy.json
 
-  sast:
+  SAST:
+    name: SAST — ${{ matrix.sast }}  # <--- Динамическое имя!
     runs-on: ubuntu-latest
+    strategy:
+      # Запрет быстрого завершение оставшихся задач, если упадет предыдущая
+      fail-fast: false
+      # Размножение задач на независимые параллельные задачи
+      matrix:
+        # Запуск параллельных задач
+        sast: [sast-auto, sast-my-rules]
 
     steps:
       - name: Checkout repository
@@ -117,6 +125,7 @@ jobs:
         run: pip install semgrep
 
       - name: Cache Semgrep rules
+        if: matrix.sast == 'sast-auto'
         id: semgrep-cache
         uses: actions/cache@v4
         with:
@@ -139,7 +148,7 @@ jobs:
           rm .semgrep-rules/.pre-commit-config.yaml
           rm -rf .semgrep-rules/.git*
 
-        # Список измененных файлов (разделяем их ПРОБЕЛОМ для Semgrep)
+        # Список измененных файлов - разделены пробелом для Semgrep
       - name: Get changed files
         id: changed-files
         uses: tj-actions/changed-files@v45
@@ -151,19 +160,45 @@ jobs:
 
         # Запуск Semgrep только если есть измененные файлы
       - name: Run Semgrep
-        if: steps.changed-files.outputs.any_changed == 'true'
+        if: matrix.sast == 'sast-auto' && steps.changed-files.outputs.any_changed == 'true'
         run: semgrep scan --config .semgrep-rules --json --output semgrep.json ${{ steps.changed-files.outputs.all_changed_files }}
 
       #- name: Run Semgrep
-      #  run: |
-      #    semgrep scan --config .semgrep-rules . --json --output semgrep.json
+      #  run: semgrep scan --config .semgrep-rules . --json --output semgrep.json
 
       - name: Upload Semgrep result
+        if: matrix.sast == 'sast-auto'
         uses: actions/upload-artifact@v4
         with:
-          name: semgrep-result
-          path: semgrep.json
+          name: semgrep-auto-rules-result
+          path: semgrep-auto-rules.json
 
+        # Запуск Semgrep со своими правилами
+      - name: Check My Semgrep Rules Exist
+        id: check-my-rules
+        run: |
+          if [ ! -d ".security/SAST/semgrep" ]; then
+            echo "::notice::Semgrep rules directory not found: .security/SAST/semgrep. Skipping scan for sast-my-rules."
+            echo "rules_missing=true" >> $GITHUB_OUTPUT
+            # exit 1
+          else
+            echo "rules_missing=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Run Semgrep My Rules
+        if: matrix.sast == 'sast-my-rules' && steps.check-my-rules.outputs.rules_missing == 'false' && steps.changed-files.outputs.any_changed == 'true'
+        run: semgrep scan --config .security/SAST/semgrep --json --output semgrep-my-rules.json ${{ steps.changed-files.outputs.all_changed_files }}
+
+      - name: Create Empty Result If Rules Missing
+        if: matrix.sast == 'sast-my-rules' && steps.check-rules.outputs.rules_missing == 'true'
+        run: echo "{\"results\":[],\"errors\":[\"Semgrep rules not found\"]}" > semgrep-my-rules.json
+
+      - name: Upload Semgrep My Rules Result
+        if: matrix.sast == 'sast-my-rules'
+        uses: actions/upload-artifact@v4
+        with:
+          name: semgrep-my-rules-result
+          path: semgrep-my-rules.json
 
 
 
