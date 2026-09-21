@@ -28,7 +28,7 @@ def run_agent():
     rules_path = request.form["rules_path"]
 
     user_input = input()
-    result = eval(user_input)
+    result = eval(user_input) # added new construction
 
     if agent == "code":
 
