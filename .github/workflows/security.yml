@@ -177,8 +177,8 @@ jobs:
       - name: Check My Semgrep Rules Exist
         id: check-my-rules
         run: |
-          if [ ! -d ".security/SAST/semgrep" ]; then
-            echo "::notice::Semgrep rules directory not found: .security/SAST/semgrep. Skipping scan for sast-my-rules."
+          if [ ! -d "security/SAST/semgrep" ]; then
+            echo "::notice::Semgrep rules directory not found: security/SAST/semgrep Skipping scan for sast-my-rules."
             echo "rules_missing=true" >> $GITHUB_OUTPUT
             #exit 1
           else
@@ -187,7 +187,7 @@ jobs:
 
       - name: Run Semgrep My Rules
         if: matrix.sast == 'sast-my-rules' && steps.check-my-rules.outputs.rules_missing == 'false' && steps.changed-files.outputs.any_changed == 'true'
-        run: semgrep scan --config .security/SAST/semgrep --json --output semgrep-my-rules.json ${{ steps.changed-files.outputs.all_changed_files }}
+        run: semgrep scan --config security/SAST/semgrep --json --output semgrep-my-rules.json ${{ steps.changed-files.outputs.all_changed_files }}
 
       - name: Create Empty Result If Rules Missing
         if: matrix.sast == 'sast-my-rules' && steps.check-rules.outputs.rules_missing == 'true'
