@@ -161,7 +161,7 @@ jobs:
         # Запуск Semgrep только если есть измененные файлы
       - name: Run Semgrep
         if: matrix.sast == 'sast-auto' && steps.changed-files.outputs.any_changed == 'true'
-        run: semgrep scan --config .semgrep-rules --json --output semgrep.json ${{ steps.changed-files.outputs.all_changed_files }}
+        run: semgrep scan --config .semgrep-rules --json --output semgrep-auto.json ${{ steps.changed-files.outputs.all_changed_files }}
 
       #- name: Run Semgrep
       #  run: semgrep scan --config .semgrep-rules . --json --output semgrep.json
@@ -171,7 +171,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: semgrep-auto-rules-result
-          path: semgrep-auto-rules.json
+          path: semgrep-auto.json
 
         # Запуск Semgrep со своими правилами
       - name: Check My Semgrep Rules Exist
