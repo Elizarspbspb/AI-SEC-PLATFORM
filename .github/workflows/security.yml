@@ -180,7 +180,7 @@ jobs:
           if [ ! -d ".security/SAST/semgrep" ]; then
             echo "::notice::Semgrep rules directory not found: .security/SAST/semgrep. Skipping scan for sast-my-rules."
             echo "rules_missing=true" >> $GITHUB_OUTPUT
-            # exit 1
+            exit 1
           else
             echo "rules_missing=false" >> $GITHUB_OUTPUT
           fi
