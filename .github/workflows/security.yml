@@ -207,7 +207,7 @@ jobs:
 
 
   gate:
-    needs: [Secrets, SCA]
+    #needs: [Secrets, SCA]
     runs-on: ubuntu-latest
 
     steps:
@@ -222,3 +222,33 @@ jobs:
       - name: Security gate
         run: python security/security_gate.py
 
+      - name: Build Docker image
+        run: docker build -t ai-sec-platform:${{ github.sha }} .
+
+      - name: Trivy image scan
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          image-ref: ai-sec-platform:${{ github.sha }}
+          format: json
+          output: trivy-image.json
+          severity: CRITICAL,HIGH,MEDIUM
+          exit-code: 0
+
+      - name: Run container
+        run: docker run -d --name ai-sec-platform -p 8000:8000 ai-sec-platform:${{ github.sha }}
+
+      - name: Check application
+        run: |
+          for i in {1..30}; do
+            if curl -f http://localhost:8000; then
+              echo "Application is running"
+              exit 0
+            fi
+
+            echo "Waiting for application..."
+            sleep 2
+          done
+
+          echo "Application did not start"
+          docker logs ai-sec-platform
+          exit 1

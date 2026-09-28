@@ -142,6 +142,11 @@ gitleaks detect --config .gitleaks.toml --source . --no-git -v
 ```
 pip freeze > requirements.txt
 ```
+Или
+```
+pipreqs . --encoding=utf-8 --ignore .venv --force
+```
+
 * Если у вас .NET: он проверяет файлы проектов .csproj и packages.config.
 
 ## 2.2 Trivy
@@ -197,6 +202,92 @@ semgrep scan --config /home/user/workspace/semgrep-rules/python . --json --outpu
 # 4. Этап 4: Создание Docker Build и проверка Docker-образа (Container Scanning)
     * Инструмент: Trivy (он отлично сканирует и образы).
     * Зачем: Ищет уязвимости в базовой ОС контейнера перед деплоем.
+
+GitHub для каждого запуска выделяет чистую виртуальную машину. 
+Без специальной настройки он не знает про кэш, поэтому компиляция clang, llvm и dbus будет занимать по 10–15 минут.
+Чтобы оптимизировать это, нужно включить кэширование слоёв Docker в GitHub Actions.
+workflow-файл (.github/workflows/build.yml), который использует официальный кэш GitHub (тип gha). 
+```
+name: Build AI Sec Platform
+on:
+  push:
+    branches: [ "main", "develop" ] # Запускать при пуше в эти ветки
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+            # 1. Обязательный шаг: настраиваем продвинутый движок сборки Docker (Buildx)
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # 2. Собираем образ с автоматическим сохранением и чтением кэша из GitHub
+      - name: Build Docker image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          tags: ai-sec-platform:${{ github.sha }}
+          outputs: type=docker,dest=/tmp/image.tar # Временно сохраняем образ как артефакт для запуска на этой же машине
+          cache-from: type=gha                      # Ищем кэш прошлых сборок в облаке GitHub
+          cache-to: type=gha,mode=max               # Записываем новый кэш библиотек в облако GitHub
+
+      # 3. Загружаем собранный образ в локальный Docker движок Runner'а
+      - name: Load Docker image
+        run: docker load -i /tmp/image.tar
+
+      # 4. Запускаем контейнер (исправили порт на 5000, учитывая прошлую проблему!)
+      - name: Run container
+        run: docker run -d --name ai-sec-platform -p 8000:5000 ai-sec-platform:${{ github.sha }}
+```
+Сборка образа:
+```
+sudo docker build -t ai-sec-platform:test .
+```
+Запуск контейнера из образа ai-sec-platform:test:
+```
+sudo docker run -d --name ai-sec-platform -p 8000:8000 ai-sec-platform:test
+```
+Смотрим что контейнер запущен:
+```
+sudo docker ps
+```
+Удалите старый контейнер:
+```
+sudo docker rm -f ai-sec-platform
+```
+Убедитесь, что контейнер удален:
+```bash
+sudo docker ps -a
+```
+Удалите старый образ:
+```
+sudo docker rmi ai-sec-platform:test
+```
+Убедитесь, что образ удален:
+```
+sudo docker images
+```
+Одной командой:
+```
+sudo docker rm -f ai-sec-platform && sudo docker build -t ai-sec-platform:test . && sudo docker run -d --name ai-sec-platform -p 8000:8000 ai-sec-platform:test
+```
+Смотрим логи, там будет IP адрес работы контейнереа:
+```
+sudo docker logs ai-sec-platform
+```
+Смотрим, что есть доступ:
+```
+curl -f http://localhost:8000
+```
+Остановка контейнера:
+```
+sudo docker stop ai-sec-platform
+```
+
 5. Этап 5: Динамический анализ (DAST) — Опционально для продвинутых
     * Инструмент: OWASP ZAP (в режиме автоматического сканирования API/веба) и Nuclei
     * Зачем: ...
