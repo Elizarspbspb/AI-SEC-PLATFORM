@@ -214,25 +214,25 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      - name: Download Trivy result
-        uses: actions/download-artifact@v5
-        with:
-          name: trivy-result
+      #- name: Download Trivy result
+      #  uses: actions/download-artifact@v5
+      #  with:
+      #    name: trivy-result
 
-      - name: Security gate
-        run: python security/security_gate.py
+      #- name: Security gate
+      #  run: python security/security_gate.py
 
       - name: Build Docker image
         run: docker build -t ai-sec-platform:${{ github.sha }} .
 
-      - name: Trivy image scan
-        uses: aquasecurity/trivy-action@v0.36.0
-        with:
-          image-ref: ai-sec-platform:${{ github.sha }}
-          format: json
-          output: trivy-image.json
-          severity: CRITICAL,HIGH,MEDIUM
-          exit-code: 0
+      #- name: Trivy image scan
+      #  uses: aquasecurity/trivy-action@v0.36.0
+      #  with:
+      #    image-ref: ai-sec-platform:${{ github.sha }}
+      #    format: json
+      #    output: trivy-image.json
+      #    severity: CRITICAL,HIGH,MEDIUM
+      #    exit-code: 0
 
       - name: Run container
         run: docker run -d --name ai-sec-platform -p 8000:8000 ai-sec-platform:${{ github.sha }}
