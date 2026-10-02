@@ -301,15 +301,30 @@ jobs:
           docker logs ai-sec-platform
           exit 1
 
+      - name: Setup Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: "1.24"
+
       - name: Install Nuclei
         run: |
-          curl -L -o nuclei.zip "https://github.com/projectdiscovery/nuclei/releases/latest/download/nuclei-linux-amd64.zip"
-          unzip -o nuclei.zip
-          sudo mv nuclei /usr/local/bin/nuclei
-          nuclei -version
+          go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
+          echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
 
       - name: Update Nuclei templates
-        run: nuclei -update-templates
+        run: |
+          nuclei -version
+          nuclei -update-templates
+
+      #- name: Install Nuclei
+      #  run: |
+      #    curl -L -o nuclei.zip "https://github.com/projectdiscovery/nuclei/releases/latest/download/nuclei-linux-amd64.zip"
+      #    unzip -o nuclei.zip
+      #    sudo mv nuclei /usr/local/bin/nuclei
+      #    nuclei -version
+
+      #- name: Update Nuclei templates
+      #  run: nuclei -update-templates
 
       - name: Run DAST scanners
         #if: matrix.dast_scanner == 'nuclei'
