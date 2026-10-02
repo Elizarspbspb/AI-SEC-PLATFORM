@@ -240,6 +240,14 @@ jobs:
           cache-from: type=gha                        # Поиск кэша прошлых сборок в облаке GitHub
           cache-to: type=gha,mode=max                 # Запись нового кэша библиотек в облако GitHub
 
+      # Загрузка образа в артефакты
+      - name: Upload Docker Image to GitHub Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: docker-image-ai-sec-platform-${{ github.run_number }}
+          path: /tmp/image.tar
+          retention-days: 5                        # Дни хранения
+
       # Загрузка образа в локальный Docker движок Runner
       - name: Load Docker image
         run: docker load -i /tmp/image.tar
