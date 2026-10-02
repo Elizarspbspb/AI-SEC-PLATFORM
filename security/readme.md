@@ -54,7 +54,7 @@ git push
 После push зайти на GitHub → свой репозиторий → Actions.
 
 # 1. Этап 1: Секреты (Secret Detection)
-    * Инструмент: Trufflehog и Gitleaks.
+    * Инструмент: Trufflehog и Gitleaks, а еще `trivy fs --security-checks vuln,secret .`.
     * Зачем: Проверяет, не забыл ли разработчик закоммитить в код пароли, API-ключи или приватные токены. 
     Пайплайн должен падать, если секреты найдены.
 ## 1.1 TruffleHog
@@ -207,6 +207,56 @@ GitHub для каждого запуска выделяет чистую вир
 Без специальной настройки он не знает про кэш, поэтому компиляция clang, llvm и dbus будет занимать по 10–15 минут.
 Чтобы оптимизировать это, нужно включить кэширование слоёв Docker в GitHub Actions.
 workflow-файл (.github/workflows/build.yml), который использует официальный кэш GitHub (тип gha). 
+Старая версия:
+```
+  gate:
+    #needs: [Secrets, SCA]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      #- name: Download Trivy result
+      #  uses: actions/download-artifact@v5
+      #  with:
+      #    name: trivy-result
+
+      #- name: Security gate
+      #  run: python security/security_gate.py
+
+      - name: Build Docker image
+        run: docker build -t ai-sec-platform:${{ github.sha }} .
+
+      #- name: Trivy image scan
+      #  uses: aquasecurity/trivy-action@v0.36.0
+      #  with:
+      #    image-ref: ai-sec-platform:${{ github.sha }}
+      #    format: json
+      #    output: trivy-image.json
+      #    severity: CRITICAL,HIGH,MEDIUM
+      #    exit-code: 0
+
+      - name: Run container
+        run: docker run -d --name ai-sec-platform -p 8000:8000 ai-sec-platform:${{ github.sha }}
+
+      - name: Check application
+        run: |
+          for i in {1..30}; do
+            if curl -f http://localhost:8000; then
+              echo "Application is running"
+              exit 0
+            fi
+
+            echo "Waiting for application..."
+            sleep 2
+          done
+
+          echo "Application did not start"
+          docker logs ai-sec-platform
+          exit 1
+```
+Новая версия с сохранением кэша
 ```
 name: Build AI Sec Platform
 on:
