@@ -1,0 +1,16 @@
+id: custom-missing-x-frame-options
+
+info:
+  name: Missing X-Frame-Options Header
+  author: AI-SEC-PLATFORM
+  severity: medium
+  description: Detects missing X-Frame-Option security header.
+  
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+    matchers:
+      - type: dsl
+        dsl: 
+          - "!contains(tolower(all_headers), 'x-frame-options:')"

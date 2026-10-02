@@ -1,0 +1,16 @@
+id: custom-missing-x-content-type-options
+
+info:
+  name: Missing X-Content-Type-Options Header
+  author: AI-SEC-PLATFORM
+  severity: low
+  description: Detects missing X-Content-Type-Options security header.
+
+http:
+  - method: GET
+    path:
+      - "{{BaseURL}}"
+    matchers:
+      - type: dsl
+        dsl:
+          - "!contains(tolower(all_headers), 'x-content-type-options:')"

@@ -210,7 +210,7 @@ jobs:
 
 
 
-  gate:
+  SAST_GATE:
     #needs: [Secrets, SCA]
     runs-on: ubuntu-latest
 
@@ -225,6 +225,18 @@ jobs:
 
       #- name: Security gate
       #  run: python security/security_gate.py
+
+  DAST:
+    needs: [SAST_GATE]
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        dast_scanner: [nuclei, nuclei-custom, zap-baseline, zap-full]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
 
       # Новый подход к сборке Docker (Buildx)
       - name: Set up Docker Buildx
@@ -288,3 +300,25 @@ jobs:
           echo "Application did not start"
           docker logs ai-sec-platform
           exit 1
+
+      - name: Run Nuclei
+        if: matrix.dast_scanner == 'nuclei'
+        run: nuclei -u http://localhost:8000 -jsonl -o nuclei.json
+
+      - name: Upload Nuclei result
+        if: matrix.dast_scanner == 'nuclei'
+        uses: actions/upload-artifact@v4
+        with:
+          name: dast-${{ matrix.dast_scanner }}
+          path: nuclei.json
+
+      - name: Run Nuclei Custom
+        if: matrix.dast_scanner == 'nuclei-custom'
+        run: nuclei -u http://localhost:8000 -t ./security/DAST/nuclei/ -jsonl -o nuclei-custom.json -no-meta -omit-raw
+
+      - name: Upload Nuclei Custom result
+        if: matrix.dast_scanner == 'nuclei-custom'
+        uses: actions/upload-artifact@v4
+        with:
+          name: dast-${{ matrix.dast_scanner }}
+          path: nuclei-custom.json

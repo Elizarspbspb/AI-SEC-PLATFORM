@@ -338,9 +338,28 @@ curl -f http://localhost:8000
 sudo docker stop ai-sec-platform
 ```
 
-5. Этап 5: Динамический анализ (DAST) — Опционально для продвинутых
+# 5. Этап 5: Динамический анализ (DAST) — Опционально для продвинутых
     * Инструмент: OWASP ZAP (в режиме автоматического сканирования API/веба) и Nuclei
-    * Зачем: ...
+    * Зачем: Проверять запущенное приложение и находить уязвимости, которые проявляются во время его работы.
+
+## 5.1 Nuclei
+Несколько способов запуска:
+```
+nuclei -u http://localhost:8000 -t ./security/DAST/nuclei/ -jsonl -omit-raw | jq -c 'del(."template-encoded")' > nuclei-custom.json
+
+nuclei -u http://localhost:8000 -t ./security/DAST/nuclei/ -jsonl -o nuclei-custom.json -no-meta -omit-raw
+
+nuclei -u http://localhost:8000 -t ./security/DAST/nuclei/ -jsonl -o nuclei-custom.json -no-meta
+
+nuclei -u http://localhost:8000 -t ./security/DAST/nuclei/ -jsonl -o nuclei-custom.json
+```
+Общая база правил:
+```
+nuclei -u http://localhost:8000 -jsonl -o nuclei.json
+```
+
+## 5.2 OWASP ZAP
+
 6. Этап 6: Провекра JWT и OAuth 2.0.
     * Инструмент: не определен или свой python код. 
     * Зачем: ...
