@@ -345,7 +345,9 @@ jobs:
           key: zap-image-v1
 
       - name: Run DAST scanners
-        run: docker run --rm --network host -v "$PWD:/zap/wrk" ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t http://localhost:8000 -J zap-baseline.json & wait
+        run: |
+          chmod 777 "$PWD"
+          docker run --rm --network host --user "$(id -u):$(id -g)" -v "$PWD:/zap/wrk:rw" ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t http://localhost:8000 -J zap-baseline.json & wait
 
       - name: Upload Nuclei Custom result
         uses: actions/upload-artifact@v4
