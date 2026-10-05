@@ -301,50 +301,69 @@ jobs:
           docker logs ai-sec-platform
           exit 1
 
-      - name: Setup Go
-        uses: actions/setup-go@v6
-        with:
-          go-version: "1.26"
-
-      - name: Install Nuclei
-        run: |
-          go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
-          echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
-
-      - name: Update Nuclei templates
-        run: |
-          nuclei -version
-          nuclei -update-templates
+      #- name: Setup Go
+      #  uses: actions/setup-go@v6
+      #  with:
+      #    go-version: "1.26"
 
       #- name: Install Nuclei
       #  run: |
-      #    curl -L -o nuclei.zip "https://github.com/projectdiscovery/nuclei/releases/latest/download/nuclei-linux-amd64.zip"
-      #    unzip -o nuclei.zip
-      #    sudo mv nuclei /usr/local/bin/nuclei
-      #    nuclei -version
+      #    go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
+      #    echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
 
       #- name: Update Nuclei templates
-      #  run: nuclei -update-templates
+      #  run: |
+      #    nuclei -version
+      #    nuclei -update-templates
 
-      - name: Run DAST scanners
-        #if: matrix.dast_scanner == 'nuclei'
-        run: |
-             nuclei -u http://localhost:8000 -jsonl -o nuclei.json &
-             nuclei -u http://localhost:8000 -t ./security/DAST/nuclei/ -jsonl -o nuclei-custom.json -no-meta -omit-raw &
-             # nuclei -u http://localhost:8000 -t security/DAST/nuclei/ -jsonl -o nuclei-custom.json &
-             # zap-baseline.py -t http://localhost:8000 -J zap-baseline.json &
-             # zap-full-scan.py -t http://localhost:8000 -J zap-full.json &
-             wait
-
-      - name: Upload Nuclei Custom result
-        uses: actions/upload-artifact@v4
+      - name: Restore ZAP image cache
+        id: zap-cache
+        uses: actions/cache/restore@v4
         with:
-          name: dast-results
-          path: |
-            nuclei.json
-            nuclei-custom.json
-            #zap-baseline.json
-            #zap-full.json
+          path: /tmp/zap-image.tar
+          key: zap-image-v1
+
+      - name: Load ZAP image from cache
+        if: steps.zap-cache.outputs.cache-hit == 'true'
+        run: |
+          docker load -i /tmp/zap-image.tar
+
+      - name: Download ZAP image
+        if: steps.zap-cache.outputs.cache-hit != 'true'
+        run: |
+          docker pull ghcr.io/zaproxy/zaproxy:stable
+
+      - name: Save ZAP image to cache
+        if: steps.zap-cache.outputs.cache-hit != 'true'
+        run: |
+          docker save ghcr.io/zaproxy/zaproxy:stable -o /tmp/zap-image.tar
+
+      - name: Save ZAP cache
+        if: steps.zap-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: /tmp/zap-image.tar
+          key: zap-image-v1
+
+      #- name: Run DAST scanners
+      #  #if: matrix.dast_scanner == 'nuclei'
+      #  run: |
+      #       nuclei -u http://localhost:8000 -jsonl -o nuclei.json &
+      #       nuclei -u http://localhost:8000 -t ./security/DAST/nuclei/ -jsonl -o nuclei-custom.json -no-meta -omit-raw &
+      #       # nuclei -u http://localhost:8000 -t security/DAST/nuclei/ -jsonl -o nuclei-custom.json &
+      #       # zap-baseline.py -t http://localhost:8000 -J zap-baseline.json &
+      #       # zap-full-scan.py -t http://localhost:8000 -J zap-full.json &
+      #       wait
+
+      #- name: Upload Nuclei Custom result
+      #  uses: actions/upload-artifact@v4
+      #  with:
+      #    name: dast-results
+      #    path: |
+      #      nuclei.json
+      #      nuclei-custom.json
+      #      #zap-baseline.json
+      #      #zap-full.json
 
   DAST_GATE:
     needs: [DAST]
