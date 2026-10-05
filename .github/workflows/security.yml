@@ -354,6 +354,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
+      - name: Download Nuclei Results
+        uses: actions/download-artifact@v4
+        with:
+          name: dast-results
+          # Файл скачается прямо в текущую рабочую директорию
+
       - name: Gate parser
         run: python ./security/DAST/dast_gate.py nuclei.json nuclei-custom.json
 
