@@ -345,7 +345,6 @@ jobs:
           key: zap-image-v1
 
       - name: Run DAST scanners
-        #if: matrix.dast_scanner == 'nuclei'
         run: |
       #       nuclei -u http://localhost:8000 -jsonl -o nuclei.json &
       #       nuclei -u http://localhost:8000 -t ./security/DAST/nuclei/ -jsonl -o nuclei-custom.json -no-meta -omit-raw &
