@@ -349,10 +349,10 @@ jobs:
           touch zap-baseline.json zap-full.json zap.yaml
           chmod 777 zap-baseline.json zap-full.json zap.yaml
           nuclei -u http://localhost:8000 -jsonl -o nuclei.json &
-          nuclei -u http://localhost:8000 -t ./security/DAST/nuclei/ -jsonl -o nuclei-custom.json -no-meta -omit-raw &
-          docker run --rm --network host -v "$PWD:/zap/wrk:rw" ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t http://localhost:8000 -J zap-baseline.json & 
-          docker run --rm --network host -v "$PWD:/zap/wrk:rw" ghcr.io/zaproxy/zaproxy:stable zap-full-scan.py -t http://localhost:8000 -J zap-full.json &
+          nuclei -u http://localhost:8000 -t ./security/DAST/nuclei/ -jsonl -o nuclei-custom.json -no-meta -omit-raw
           wait
+          docker run --rm --network host -v "$PWD:/zap/wrk:rw" ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t http://localhost:8000 -J zap-baseline.json
+          docker run --rm --network host -v "$PWD:/zap/wrk:rw" ghcr.io/zaproxy/zaproxy:stable zap-full-scan.py -t http://localhost:8000 -J zap-full.json
 
       - name: Upload Nuclei Custom result
         uses: actions/upload-artifact@v4
@@ -364,25 +364,24 @@ jobs:
             zap-baseline.json
             zap-full.json
 
-#  DAST_GATE:
-#    needs: [DAST]
-#    runs-on: ubuntu-latest
+  DAST_GATE:
+    needs: [DAST]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
 
-#    steps:
-#      - name: Checkout repository
-#        uses: actions/checkout@v6
-
-#      - name: Download Nuclei Results
-#        uses: actions/download-artifact@v4
-#        with:
-#          name: dast-results
+      - name: Download Nuclei Results
+        uses: actions/download-artifact@v4
+        with:
+          name: dast-results
           # Файл скачается прямо в текущую рабочую директорию
 
-      #- name: Gate parser
-      #  run: python ./security/DAST/dast_gate.py nuclei.json nuclei-custom.json
+      - name: Gate parser
+        run: python ./security/DAST/dast_gate.py nuclei.json nuclei-custom.json
 
-      #- name: Upload DAST gate result
-      #  uses: actions/upload-artifact@v4
-      #  with:
-      #    name: security-summary
-      #    path: security-summary.json
+      - name: Upload DAST gate result
+        uses: actions/upload-artifact@v4
+        with:
+          name: security-summary
+          path: security-summary.json
