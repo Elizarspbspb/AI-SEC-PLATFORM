@@ -300,20 +300,20 @@ jobs:
           docker logs ai-sec-platform
           exit 1
 
-      #- name: Setup Go
-      #  uses: actions/setup-go@v6
-      #  with:
-      #    go-version: "1.26"
+      - name: Setup Go
+        uses: actions/setup-go@v6
+        with:
+          go-version: "1.26"
 
-      #- name: Install Nuclei
-      #  run: |
-      #    go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
-      #    echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
+      - name: Install Nuclei
+        run: |
+          go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
+          echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
 
-      #- name: Update Nuclei templates
-      #  run: |
-      #    nuclei -version
-      #    nuclei -update-templates
+      - name: Update Nuclei templates
+        run: |
+          nuclei -version
+          nuclei -update-templates
 
       - name: Restore ZAP image cache
         id: zap-cache
@@ -346,14 +346,11 @@ jobs:
 
       - name: Run DAST scanners
         run: |
-      #       nuclei -u http://localhost:8000 -jsonl -o nuclei.json &
-      #       nuclei -u http://localhost:8000 -t ./security/DAST/nuclei/ -jsonl -o nuclei-custom.json -no-meta -omit-raw &
-      #       # nuclei -u http://localhost:8000 -t security/DAST/nuclei/ -jsonl -o nuclei-custom.json &
-      #       # zap-baseline.py -t http://localhost:8000 -J zap-baseline.json &
-      #       # zap-full-scan.py -t http://localhost:8000 -J zap-full.json &
-             docker run --rm --network host -v "$PWD:/zap/wrk" ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t http://localhost:8000 -J zap-baseline.json &
-             docker run --rm --network host -v "$PWD:/zap/wrk" ghcr.io/zaproxy/zaproxy:stable zap-full-scan.py -t http://localhost:8000 -J zap-full.json &
-             wait
+          nuclei -u http://localhost:8000 -jsonl -o nuclei.json &
+          nuclei -u http://localhost:8000 -t ./security/DAST/nuclei/ -jsonl -o nuclei-custom.json -no-meta -omit-raw &
+          docker run --rm --network host -v "$PWD:/zap/wrk" ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t http://localhost:8000 -J zap-baseline.json &
+          docker run --rm --network host -v "$PWD:/zap/wrk" ghcr.io/zaproxy/zaproxy:stable zap-full-scan.py -t http://localhost:8000 -J zap-full.json &
+          wait
 
       - name: Upload Nuclei Custom result
         uses: actions/upload-artifact@v4
