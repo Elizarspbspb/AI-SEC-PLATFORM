@@ -257,7 +257,7 @@ jobs:
         with:
           name: docker-image-ai-sec-platform-${{ github.run_number }}
           path: /tmp/image.tar
-          retention-days: 5                        # Дни хранения
+          retention-days: 5   # Дни хранения
 
       # Загрузка образа в локальный Docker движок Runner
       - name: Load Docker image
@@ -348,6 +348,8 @@ jobs:
         run: |
           touch zap-baseline.json zap-full.json zap.yaml
           chmod 777 zap-baseline.json zap-full.json zap.yaml
+          nuclei -u http://localhost:8000 -jsonl -o nuclei.json &
+          nuclei -u http://localhost:8000 -t ./security/DAST/nuclei/ -jsonl -o nuclei-custom.json -no-meta -omit-raw &
           docker run --rm --network host -v "$PWD:/zap/wrk:rw" ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t http://localhost:8000 -J zap-baseline.json & 
           docker run --rm --network host -v "$PWD:/zap/wrk:rw" ghcr.io/zaproxy/zaproxy:stable zap-full-scan.py -t http://localhost:8000 -J zap-full.json &
           wait
@@ -357,6 +359,8 @@ jobs:
         with:
           name: dast-results
           path: |
+            nuclei.json
+            nuclei-custom.json
             zap-baseline.json
             zap-full.json
 
