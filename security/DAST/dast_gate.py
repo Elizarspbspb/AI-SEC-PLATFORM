@@ -14,13 +14,10 @@ def analyze_nuclei(file_path):
                 data = json.loads(line)
                 info_block = data.get("info", {})
                 severity = info_block.get("severity", "info").lower()
-                
                 severity_counter[severity] += 1
-                
                 classification = info_block.get("classification", {})
                 cve = classification.get("cve-id")
                 cwe_list = classification.get("cwe-id")
-                
                 vulnerabilities_details.append({
                     "id": data.get("template-id"),
                     "host": data.get("host", "N/A"),
@@ -30,6 +27,44 @@ def analyze_nuclei(file_path):
                 })
             except Exception as e:
                 print(f"[!] Ошибка парсинга строки Nuclei: {e}")
+    return severity_counter, vulnerabilities_details
+
+def analyze_zap(file_path):
+    severity_counter = Counter({"critical": 0, "high": 0, "medium": 0, "low": 0, "info": 0})
+    vulnerabilities_details = []
+    zap_severity_mapping = {
+        "3": "high",
+        "2": "medium",
+        "1": "low",
+        "0": "info"
+    }
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        # Обходим массив сайтов в отчёте
+        for site_entry in data.get("site", []):
+            host = site_entry.get("@host", "N/A")
+            port = site_entry.get("@port", "")
+            full_host = f"{host}:{port}" if port else host
+            # Обходим алерты для этого сайта
+            for alert in site_entry.get("alerts", []):
+                risk_code = alert.get("riskcode", "0")
+                severity = zap_severity_mapping.get(risk_code, "info")
+                # Увеличиваем счётчик
+                severity_counter[severity] += 1
+                cwe_id = alert.get("cweid")
+                cwe_list = [f"cwe-{cwe_id}"] if cwe_id and cwe_id != "-1" else ["No-CWE"]
+                vulnerabilities_details.append({
+                    "id": f"zap-{alert.get('pluginid', 'unknown')}",
+                    "host": full_host,
+                    "url": site_entry.get("@name", "N/A"),
+                    "severity": severity.upper(),
+                    "cve": "No-CVE",  # ZAP по умолчанию не маппит на CVE, только на CWE
+                    "cwe": cwe_list,
+                    "timestamp": data.get("@generated", "N/A")
+                })
+    except Exception as e:
+        print(f"[!] Ошибка парсинга файла ZAP '{file_path}': {e}")
     return severity_counter, vulnerabilities_details
 
 def analyze_xsstrike(file_path):
@@ -61,21 +96,32 @@ def main():
             print(f" Предупреждение: Файл '{file_path}' не найден, пропускаем.")
             continue
 
-        print(f" Анализируем файл: {file_path}")
-        # Парсим текущий файл
-        stats, details = analyze_nuclei(file_path)
-        
-        print("\n[+] ДЕТАЛИЗАЦИЯ НАЙДЕННЫХ УЯЗВИМОСТЕЙ:")
-        print(f"{'КРИТИЧНОСТЬ':<12} | {'ИДЕНТИФИКАТОР (ID)':<35} | {'ХОСТ':<20} | {'CVE / CWE'}")
-        print("-" * 100)
-        for vuln in details:
-            print(f"{vuln['severity']:<12} | {vuln['id']:<35} | {vuln['host']:<20} | {vuln['cve']} [{vuln['cwe']}]")
-        print("=" * 100)
-    
-        # Объединяем статистику и дефекты в общие массивы
-        total_stats.update(stats)
-        all_vulnerabilities.extend(details)
+        # Определяем тип файла на основе его структуры
+        try:
+            with open(file_path, "r", encoding="utf-8") as test_f:
+                # Читаем самое начало файла для быстрой проверки
+                start_content = test_f.read(100)
+            if "@programName" in start_content or '"site"' in start_content:
+                print(f" Обнаружен формат OWASP ZAP. Анализируем: {file_path}")
+                stats, details = analyze_zap(file_path)
+            else:
+                print(f" Обнаружен формат Nuclei. Анализируем: {file_path}")
+                stats, details = analyze_nuclei(file_path)
+            
+            print("\n[+] ДЕТАЛИЗАЦИЯ НАЙДЕННЫХ УЯЗВИМОСТЕЙ:")
+            print(f"{'КРИТИЧНОСТЬ':<12} | {'ИДЕНТИФИКАТОР (ID)':<35} | {'ХОСТ':<20} | {'CVE / CWE'}")
+            print("-" * 100)
+            for vuln in details:
+                print(f"{vuln['severity']:<12} | {vuln['id']:<35} | {vuln['host']:<20} | {vuln['cve']} [{vuln['cwe']}]")
+            print("=" * 100)
 
+            # Объединяем статистику и дефекты в общие массивы
+            total_stats.update(stats)
+            all_vulnerabilities.extend(details)
+
+        except Exception as e:
+            print(f"[!] Не удалось определить тип файла '{file_path}': {e}")
+            
     print("\n[+] ОБЩЕЕ КОЛИЧЕСТВО УЯЗВИМОСТЕЙ ПО КРИТИЧНОСТИ:")
     severity_order = ["critical", "high", "medium", "low", "info", "unknown"]
     for sev in severity_order:
@@ -90,13 +136,12 @@ def main():
         "vulnerabilities_found": vulns_found,
         "summary": {
             "total_issues": len(all_vulnerabilities),
-            "total_vulnerabilities": total_vulns,  # Без учета info логов
+            "total_vulnerabilities": total_vulns,
             "counts": dict(total_stats)
         },
         "vulnerabilities": all_vulnerabilities
     }
 
-    # объединенный артефакт в файл
     try:
         with open(artifact_file, "w", encoding="utf-8") as art_f:
             json.dump(artifact_data, art_f, indent=4, ensure_ascii=False)
@@ -104,8 +149,7 @@ def main():
     except Exception as e:
         print(f" Ошибка при сохранении файла артефакта: {e}")
         
-    # БЛОКИРОВКИ СБОРКИ
-    # если найдено хотя бы одно CRITICAL или HIGH
+    # Блокировка сборки если найдено хотя бы одно CRITICAL или HIGH
     fail_threshold_triggered = total_stats["critical"] > 0 or total_stats["high"] > 0
 
     if fail_threshold_triggered:

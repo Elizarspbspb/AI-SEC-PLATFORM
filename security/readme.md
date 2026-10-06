@@ -359,6 +359,29 @@ nuclei -u http://localhost:8000 -jsonl -o nuclei.json
 ```
 
 ## 5.2 OWASP ZAP
+Для запуска ZAP используется Docker образ. Общая команда выглядит примерно так:
+```
+sudo docker run --rm --network host -v "$(pwd)/zap-results:/zap/wrk" ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t http://localhost:8000 -J zap-baseline.json
+```
+```
+      - name: Run DAST scanners
+        run: |
+          #nuclei -u http://localhost:8000 -jsonl -o nuclei.json &
+          #nuclei -u http://localhost:8000 -t ./security/DAST/nuclei/ -jsonl -o nuclei-custom.json -no-meta -omit-raw &
+          docker run --rm --network host -v "$PWD:/zap/wrk" ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t http://localhost:8000 -J zap-baseline.json &
+          #docker run --rm --network host -v "$PWD:/zap/wrk" ghcr.io/zaproxy/zaproxy:stable zap-full-scan.py -t http://localhost:8000 -J zap-full.json &
+          wait
+
+      - name: Upload Nuclei Custom result
+        uses: actions/upload-artifact@v4
+        with:
+          name: dast-results
+          path: |
+            #nuclei.json
+            #nuclei-custom.json
+            zap-baseline.json
+            #zap-full.json
+```
 
 6. Этап 6: Провекра JWT и OAuth 2.0.
     * Инструмент: не определен или свой python код. 
