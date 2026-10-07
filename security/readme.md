@@ -51,7 +51,7 @@ git add .github/workflows/security.yml
 git commit -m "add GitHub Actions security pipeline"
 git push
 ```
-После push зайти на GitHub → свой репозиторий → Actions.
+После push зайти на GitHub →  репозиторий → Actions.
 
 # 1. Этап 1: Секреты (Secret Detection)
     * Инструмент: Trufflehog и Gitleaks, а еще `trivy fs --security-checks vuln,secret .`.
@@ -199,7 +199,34 @@ trivy fs --format json --output trivy_json.json --scanners vuln --severity CRITI
 semgrep scan --config /home/user/workspace/semgrep-rules/python . --json --output semgrep.json
 ```
 
-# 4. Этап 4: Создание Docker Build и проверка Docker-образа (Container Scanning)
+# 4. Этап 4: Фаззинг исполняемого кода
+# 4.1 Фаззинг исполняемого кода Atheris
+```
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install atheris
+
+    - name: Run Atheris Fuzzer
+      run: |
+        # -max_total_time=300 время работы фаззера 5 минут (300 секунд)
+        python fuzz_test.py -max_total_time=300
+```
+Если функция разработчика работает с файлами то лучше использовать - mock_open.
+
+
+# 4.2 Фаззинг API с помощью Schemathesis
+Инструмент Schemathesis делает всё на основе спецификации API (Swagger / OpenAPI).
+API имеют инструкцию — файл openapi.json или swagger.yaml. 
+Там описаны все эндпоинты (/api/v1/user), типы данных (строка, число) и какие параметры они ждут.
+
+Schemathesis проверяет API по своим тестам. 
+```
+pip install schemathesis
+st run http://localhost:8000/api/openapi.json --checks all
+```
+
+# 5. Этап 5: Создание Docker Build и проверка Docker-образа (Container Scanning)
     * Инструмент: Trivy (он отлично сканирует и образы).
     * Зачем: Ищет уязвимости в базовой ОС контейнера перед деплоем.
 
@@ -338,11 +365,11 @@ curl -f http://localhost:8000
 sudo docker stop ai-sec-platform
 ```
 
-# 5. Этап 5: Динамический анализ (DAST) — Опционально для продвинутых
+# 6. Этап 6: Динамический анализ (DAST) — Опционально для продвинутых
     * Инструмент: OWASP ZAP (в режиме автоматического сканирования API/веба) и Nuclei
     * Зачем: Проверять запущенное приложение и находить уязвимости, которые проявляются во время его работы.
 
-## 5.1 Nuclei
+## 6.1 Nuclei
 Несколько способов запуска:
 ```
 nuclei -u http://localhost:8000 -t ./security/DAST/nuclei/ -jsonl -omit-raw | jq -c 'del(."template-encoded")' > nuclei-custom.json
@@ -358,7 +385,7 @@ nuclei -u http://localhost:8000 -t ./security/DAST/nuclei/ -jsonl -o nuclei-cust
 nuclei -u http://localhost:8000 -jsonl -o nuclei.json
 ```
 
-## 5.2 OWASP ZAP
+## 6.2 OWASP ZAP
 Для запуска ZAP используется Docker образ. Общая команда выглядит примерно так:
 ```
 sudo docker run --rm --network host -v "$(pwd)/zap-results:/zap/wrk" ghcr.io/zaproxy/zaproxy:stable zap-baseline.py -t http://localhost:8000 -J zap-baseline.json
@@ -383,17 +410,17 @@ sudo docker run --rm --network host -v "$(pwd)/zap-results:/zap/wrk" ghcr.io/zap
             #zap-full.json
 ```
 
-6. Этап 6: Провекра JWT и OAuth 2.0.
+7. Этап 7: Провекра JWT и OAuth 2.0.
     * Инструмент: не определен или свой python код. 
     * Зачем: ...
-7. Этап 7: Средства автоматизированных атак на веб-приложение
+8. Этап 8: Средства автоматизированных атак на веб-приложение
     * Инструмент:  SQLMap и XSStrike
     * Зачем: ...
-8. Этап 8: Формирование JSON файла - vulnerabilities.json
+9. Этап 9: Формирование JSON файла - vulnerabilities.json
     * Инструмент: готовый python скрипт нормализации.
     * Зачем: Формируем положительный или отрицательный результат - security_gate.py
 
-# 9. Получение отчетов из Github
+# 10. Получение отчетов из Github
 Скачать и установить GitHub CLI (gh)
 ```
 sudo apt update
