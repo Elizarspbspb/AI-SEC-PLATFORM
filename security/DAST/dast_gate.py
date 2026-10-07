@@ -107,7 +107,7 @@ def main():
             else:
                 print(f" Обнаружен формат Nuclei. Анализируем: {file_path}")
                 stats, details = analyze_nuclei(file_path)
-            
+                
             print("\n[+] ДЕТАЛИЗАЦИЯ НАЙДЕННЫХ УЯЗВИМОСТЕЙ:")
             print(f"{'КРИТИЧНОСТЬ':<12} | {'ИДЕНТИФИКАТОР (ID)':<35} | {'ХОСТ':<20} | {'CVE / CWE'}")
             print("-" * 100)
